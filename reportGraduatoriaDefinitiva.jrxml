@@ -19,7 +19,7 @@
 		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
 	</parameter>
 	<parameter name="LOGO" class="java.lang.String" isForPrompting="false">
-		<defaultValueExpression><![CDATA["minilogo.png"]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA["logo.png"]]></defaultValueExpression>
 	</parameter>
 	<parameter name="INTESTAZIONE1" class="java.lang.String">
 		<defaultValueExpression><![CDATA["AZIENDA TERRITORIALE PER L’EDILIZIA RESIDENZIALE ...... ....... ....... ......."]]></defaultValueExpression>
@@ -89,9 +89,6 @@ Order by COALESCE( grad.stato, 'AAA' ) ASC, case when (grad.punteggioTotale = 0 
 	<field name="dataPubblicazione" class="java.util.Date"/>
 	<field name="oggetto" class="java.lang.String"/>
 	<field name="dataPubblicazioneGrad" class="java.sql.Date"/>
-	<variable name="PagGrad" class="java.lang.Integer">
-		<variableExpression><![CDATA[$V{PAGE_NUMBER} - 1]]></variableExpression>
-	</variable>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -156,7 +153,7 @@ Order by COALESCE( grad.stato, 'AAA' ) ASC, case when (grad.punteggioTotale = 0 
 				<text><![CDATA[GRADUATORIA DEFINITIVA]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="1" y="385" width="554" height="265" uuid="bb6c01c8-656c-47af-ae64-e8f3a0d06ee5"/>
+				<reportElement x="-10" y="390" width="554" height="265" uuid="bb6c01c8-656c-47af-ae64-e8f3a0d06ee5"/>
 				<textElement textAlignment="Justified" markup="styled">
 					<font size="12"/>
 				</textElement>
@@ -412,23 +409,26 @@ Nel rispetto di quanto previsto dall’art. 7, comma 6, del Regolamento di esecu
 	<pageFooter>
 		<band height="18" splitType="Stretch">
 			<textField>
-				<reportElement x="140" y="0" width="280" height="18" uuid="8b063c1d-a2b9-43b3-ba9e-8233a32bc3eb"/>
+				<reportElement x="140" y="0" width="280" height="18" uuid="18356363-31c1-495c-9007-71efd7347dd5"/>
 				<textElement textAlignment="Center">
-					<font size="8" isItalic="true"/>
+					<font isItalic="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$R{ReportName}+" "+$R{ReportVersion}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="430" y="0" width="125" height="18" uuid="b5676e1f-46b5-495e-85be-fcc83f942c40"/>
-				<textElement textAlignment="Center" verticalAlignment="Top">
-					<font size="8"/>
-				</textElement>
-				<textFieldExpression><![CDATA["Pagina " + ($V{PAGE_NUMBER}-1) + " di " + ($V{PAGE_NUMBER}-1)]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="0" y="0" width="130" height="18" uuid="9403f202-8aea-4e8d-ab05-84b9ae86c82b"/>
+				<reportElement x="0" y="0" width="130" height="18" uuid="88e11750-80d9-4e90-ba58-367e9460d25e"/>
 				<textElement textAlignment="Left"/>
 				<textFieldExpression><![CDATA[$P{FOOTERSTAMPA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="420" y="0" width="65" height="18" uuid="c8b4db12-fe09-49a6-bd3a-62edfe83e569"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Pagina " + ($V{PAGE_NUMBER}-1)]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="485" y="0" width="69" height="18" uuid="1c0f6eaf-35d0-4082-bf55-007c877cf2c4"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[" di " + ($V{PAGE_NUMBER}-1)]]></textFieldExpression>
 			</textField>
 		</band>
 	</pageFooter>
