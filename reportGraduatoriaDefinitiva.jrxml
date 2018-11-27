@@ -153,9 +153,18 @@ Order by COALESCE( grad.stato, 'AAA' ) ASC, case when (grad.punteggioTotale = 0 
 				<text><![CDATA[GRADUATORIA DEFINITIVA]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="-10" y="390" width="554" height="265" uuid="bb6c01c8-656c-47af-ae64-e8f3a0d06ee5"/>
+				<reportElement x="1" y="390" width="554" height="265" uuid="bb6c01c8-656c-47af-ae64-e8f3a0d06ee5">
+					<property name="com.jaspersoft.studio.unit.x" value="mm"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.0" lineStyle="Solid"/>
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+				</box>
 				<textElement textAlignment="Justified" markup="styled">
-					<font size="12"/>
+					<font fontName="ATER Fonts - Arimo" size="12"/>
 				</textElement>
 				<text><![CDATA[L’assegnazione degli alloggi agli aventi diritto avverrà in base alla presente graduatoria, tenuto conto delle caratteristiche degli stessi alloggi e della composizione del nucleo familiare destinatario dell’assegnazione.
 La presente graduatoria è resa pubblica mediante affissione, per trenta giorni consecutivi, nella sede dell’ATER, in luogo aperto al pubblico, all’albo pretorio e nelle sedi di decentramento comunale del Comune o dei Comuni nei cui territori hanno sede gli alloggi oggetto del bando, nei siti web istituzionali della Regione, dell’ATER e dei Comuni medesimi. I termini minimi di pubblicazione previsti ai fini di legittimità sono esclusivamente quelli risultanti dal sito internet dell’ATER.
@@ -195,7 +204,7 @@ Nel rispetto di quanto previsto dall’art. 7, comma 6, del Regolamento di esecu
 				<textElement textAlignment="Center" verticalAlignment="Bottom">
 					<font size="12"/>
 				</textElement>
-				<text><![CDATA[Il segretario della Commissione]]></text>
+				<text><![CDATA[Il Segretario della Commissione]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="320" y="701" width="230" height="20" uuid="84eec178-f062-45b1-8426-65067c32fa10"/>
